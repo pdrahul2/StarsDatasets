@@ -1,6 +1,5 @@
-from StarsDatasets.pedestrian import inria, eth, tudbrussels
+from StarsDatasets.pedestrian import inria, eth, tudbrussels, peta
 Inria = inria.inria('/home/uujjwal/datasets/pedestrian/INRIAPerson')
-
 print Inria._name
 print len(Inria._obj_dict['pedestrian'])
 print len(Inria._obj_dict['non-pedestrian'])
@@ -17,4 +16,11 @@ print ETH._obj_dict['pedestrian']
 TUD = tudbrussels.tudbrussels('/home/uujjwal/datasets/pedestrian/Brussels')
 print len(TUD._obj_dict['non-pedestrian'])
 annotation_dict = TUD.get_data('/home/uujjwal/datasets/pedestrian/Brussels/TUD-MotionPairs/positive/filelist.txt')
+print annotation_dict
+
+PETA = peta.peta('/Users/meetukme/Downloads/PETA')
+
+annotation_dict = PETA.get_data('/Users/meetukme/Downloads/PETA/filelist.txt')
+
+print PETA._obj_dict
 print annotation_dict
