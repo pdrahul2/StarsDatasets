@@ -7,8 +7,9 @@ class StarsDatasets(object):
 
     def __init__(self, name, base_path, extension):
         extpattern = re.compile('^\*\.\w+')
-        if not extpattern.match(extension):
-            raise ValueError('Extension provided is not valid. It must be of the form *.jpg etc.')
+        if extension is not "multiple":
+            if not extpattern.match(extension):
+                raise ValueError('Extension provided is not valid. It must be of the form *.jpg etc.')
         self._name = name
         self._base_path = base_path
         self._extension = extension
