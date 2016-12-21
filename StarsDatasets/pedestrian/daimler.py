@@ -1,7 +1,7 @@
 from StarsDatasets import StarsDatasets
 import os
 import re
-import fnmatch
+
 
 class daimler(StarsDatasets):
     def __init__(self, base_path):
