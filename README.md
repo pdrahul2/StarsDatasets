@@ -16,6 +16,6 @@ For a user there are just two pre-requisites :
 1.  Make sure that a class corresponding to the dataset exists in the project.
 2.  Make sure that you have downloaded and stored the dataset inside a specific parent folder (we call it *base_path*)
 
-*NOTE:* If [1.](https://github.com/ujjwal-researcher/StarsDatasets/README.md#L16) is not true, please look down at 
-[pre-requisites for developers](https://github.com/ujjwal-researcher/StarsDatasets/README.md#L21).
+*NOTE:* If [1.](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/README.md#L16) is not true, please look down at 
+[pre-requisites for developers](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/README.md#L21).
 ### For developers
