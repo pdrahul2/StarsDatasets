@@ -12,8 +12,7 @@ non-pedestrian datasets as well.
 
 ## Pre-requisites
 ### System requirements
-1. Python 2.7 (For special package requirements see below:)
-  a. PIL
+1. Python 2.7 (with PIL package)
    
 ### For users
 For a user there are just two pre-requisites :
