@@ -11,11 +11,21 @@ major pedestrian detection datasets can be easily read. It will be regularly upd
 non-pedestrian datasets as well.
 
 ## Pre-requisites
+### System requirements
+1. Python 2.7 (For special package requirements see below:)
+  a. PIL
+   
 ### For users
 For a user there are just two pre-requisites :
 1.  Make sure that a class corresponding to the dataset exists in the project.
 2.  Make sure that you have downloaded and stored the dataset inside a specific parent folder (we call it *base_path*)
 
-*NOTE:* If [1.](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/README.md#L16) is not true, please look down at 
+**NOTE:** If [1.](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/README.md#L16) is not true, please look down at 
 [pre-requisites for developers](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/README.md#L21).
 ### For developers
+1. Give a reading to [StarsDatasets.py](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/StarsDatasets/StarsDatasets.py).
+2. Read the inheriting class implementations for different datasets to get a clear idea of how the framework is written.
+3. Always assume that a user will provide a list of image filenames (*with full file names*) for which bounding box annotations are required.
+4. **MAKE SURE** that once you write an implementation of your own dataset, you update an example in [test.py](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/test.py) and send a pull request to update the project and make it more useful to a wider community.
+## Usage 
+Please see [test.py](https://github.com/ujjwal-researcher/StarsDatasets/blob/master/test.py)
