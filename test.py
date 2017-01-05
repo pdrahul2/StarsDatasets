@@ -1,4 +1,4 @@
-from StarsDatasets.pedestrian import inria, eth, tudbrussels, caltech
+from StarsDatasets.pedestrian import inria, eth, tudbrussels, caltech, freiburgpeople
 Inria = inria.inria('/home/uujjwal/datasets/pedestrian/INRIAPerson')
 print Inria._name
 print len(Inria._obj_dict['pedestrian'])
@@ -36,3 +36,13 @@ print len(cal._annotations)
 annotation_dict = cal.get_data('/home/uujjwal/datasets/pedestrian/caltech/images/images/set02/filelist.txt')
 print len(annotation_dict)
 print annotation_dict
+
+
+People = freiburgpeople.freiburgpeople('/run/netsop/u/sop-nas2a/vol/home_stars/rpandey/inria/dataset/mensa_seq0_1.1/')
+print People._name
+print len(People._obj_dict['pedestrian'])
+print len(People._obj_dict['non-pedestrian'])
+print "Count of persons: " ,People.peopleCount
+annotation_dict = People.get_data('/run/netsop/u/sop-nas2a/vol/home_stars/rpandey/inria/dataset/filelist.txt')
+print annotation_dict
+print len(annotation_dict.keys())

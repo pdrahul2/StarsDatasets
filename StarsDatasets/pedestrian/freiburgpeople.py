@@ -9,7 +9,7 @@ class freiburgpeople(StarsDatasets):
     annotation_full={}
     peopleCount=0
     def __init__(self, base_path):
-        super(people, self).__init__("People depth", base_path, "*.pgm")
+        super(freiburgpeople, self).__init__("People depth", base_path, "*.pgm")
         annotation_file=self.read_annotation('track_annotations')
         numPeople=0
         for filename in os.listdir(annotation_file):
