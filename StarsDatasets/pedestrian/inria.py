@@ -42,8 +42,3 @@ class inria(StarsDatasets):
             annotation_dict[line]['pedestrian'] = annotations
 
         return annotation_dict
-
-
-
-
-
