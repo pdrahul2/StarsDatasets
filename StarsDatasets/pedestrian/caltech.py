@@ -2,6 +2,7 @@ from StarsDatasets import StarsDatasets
 import os
 import re
 import fnmatch
+import json
 
 
 class caltech(StarsDatasets):
@@ -57,6 +58,10 @@ class caltech(StarsDatasets):
             line = line.strip()
             if line in self._annotations:
                 annotation_dict[line] = self._annotations[line]
+
+        annotations_file_name = os.path.join(os.path.dirname(file_list), "annotations.json")
+        with open(annotations_file_name, 'w') as file_name:
+            json.dump(annotation_dict, file_name)
         return annotation_dict
 
 

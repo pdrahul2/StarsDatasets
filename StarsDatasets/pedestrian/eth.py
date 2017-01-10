@@ -2,6 +2,7 @@ from StarsDatasets import StarsDatasets
 import os
 import re
 import fnmatch
+import json
 
 
 class eth(StarsDatasets):
@@ -57,6 +58,10 @@ class eth(StarsDatasets):
             line = line.strip()
             if line in self._obj_dict['pedestrian']:
                 annotations[line] = self._annotations[line]
+
+        annotations_file_name = os.path.join(os.path.dirname(file_list), "annotations.json")
+        with open(annotations_file_name, 'w') as file_name:
+            json.dump(annotations, file_name)
         return annotations
 
     def read_annotation(self, annotation_file):

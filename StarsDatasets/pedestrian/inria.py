@@ -2,6 +2,7 @@ from StarsDatasets import StarsDatasets
 import glob
 import os
 import re
+import json
 
 
 class inria(StarsDatasets):
@@ -41,4 +42,7 @@ class inria(StarsDatasets):
             annotations = map(lambda x: tuple(map(int, list(x))), annotations)
             annotation_dict[line]['pedestrian'] = annotations
 
+        annotations_file_name = os.path.join(os.path.dirname(file_list), "annotations.json")
+        with open(annotations_file_name, 'w') as file_name:
+            json.dump(annotation_dict, file_name)
         return annotation_dict

@@ -1,6 +1,7 @@
 from StarsDatasets import StarsDatasets
 from PIL import Image
 import os
+import json
 
 
 class peta(StarsDatasets):
@@ -31,4 +32,8 @@ class peta(StarsDatasets):
                 sz = list(img.size)
                 sz = [0, 0] + map(lambda x: x - 1, sz)
                 annotations[line] = sz
+
+        annotations_file_name = os.path.join(os.path.dirname(file_list), "annotations.json")
+        with open(annotations_file_name, 'w') as file_name:
+            json.dump(annotations, file_name)
         return annotations

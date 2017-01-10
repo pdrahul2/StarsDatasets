@@ -1,8 +1,6 @@
 from StarsDatasets import StarsDatasets
-import glob
 import os
-import re
-
+import json
 
 class freiburgpeople(StarsDatasets):
     ORIGINAL_PREFIX="seq"
@@ -66,7 +64,6 @@ class freiburgpeople(StarsDatasets):
     def get_data(self, file_list, object_list=None):
         annotation_dict = {}
         fid = open(file_list, 'r')
-        annotation_file=self.read_annotation('track_annotations')
         for line in fid:
             fname = os.path.splitext(os.path.basename(line))[0] + '.txt'
             if fname[0:len(self.ORIGINAL_PREFIX)]!=self.ORIGINAL_PREFIX:
@@ -75,4 +72,9 @@ class freiburgpeople(StarsDatasets):
             line = os.path.join(fpath, 'annotations', fname)
             if line in self._obj_dict['pedestrian']:
                 annotation_dict[line] = self.annotation_full[line]
+
+        annotations_file_name = os.path.join(os.path.dirname(file_list), "annotations.json")
+        with open(annotations_file_name, 'w') as file_name:
+            json.dump(annotation_dict, file_name)
+
         return annotation_dict

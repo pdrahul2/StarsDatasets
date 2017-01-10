@@ -1,6 +1,7 @@
 from StarsDatasets import StarsDatasets
 import os
 import re
+import json
 
 
 class daimler(StarsDatasets):
@@ -42,4 +43,8 @@ class daimler(StarsDatasets):
             fname = os.path.basename(line)
             if fname in self._annotations:
                 annotations[line] = self._annotations[fname]
+
+        annotations_file_name = os.path.join(os.path.dirname(file_list), "annotations.json")
+        with open(annotations_file_name, 'w') as file_name:
+            json.dump(annotations, file_name)
         return annotations
